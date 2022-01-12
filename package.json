@@ -1,5 +1,5 @@
 {
-  "version": "3.8.2",
+  "version": "3.8.5",
   "name": "webclipper",
   "private": true,
   "description": "The core of the OneNote Web Clipper found at https://www.onenote.com/clipper",
@@ -58,7 +58,7 @@
     "gulp-uglify": "2.0.1",
     "gulp-zip": "4.0.0",
     "json3": "3.3.2",
-    "lodash": "4.17.19",
+    "lodash": "4.17.21",
     "manifoldjs": "^0.7.6",
     "merge-stream": "1.0.1",
     "mithril": "0.2.5",

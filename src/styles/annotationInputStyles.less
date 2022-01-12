@@ -18,7 +18,7 @@
 	border: @TextAreaBorderThickness solid transparent;
 	margin: 0px;
 	padding: @TextAreaPadding;
-
+	
 	&:hover {
 		border: @TextAreaBorderThickness solid @PreviewHeaderInputHoverColor;
 	}
@@ -32,3 +32,18 @@
 	}
 }
 
+textarea::-webkit-input-placeholder { /*Chrome, Edge, Opera, Safari*/
+	color: #605e5c;
+}
+textarea::-moz-placeholder { /* Firefox 19+ */
+	color: #605e5c
+}
+textarea:-ms-input-placeholder { /* IE 10+ */
+	color: #605e5c
+}
+textarea:-moz-placeholder { /* Firefox 18- */
+	color: #605e5c
+}
+textarea::placeholder {
+	color: #605e5c;
+}

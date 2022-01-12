@@ -69,16 +69,20 @@ class FooterClass extends ComponentBase<FooterState, FooterProps> {
 
 	render() {
 		let showUserInfo = ClipperStateUtilities.isUserLoggedIn(this.props.clipperState);
+		let isMsaUser = ClipperStateUtilities.isMsaUser(this.props.clipperState);
 
 		return (
 			<div id={Constants.Ids.clipperFooterContainer} className="footerFont"
 				style={Localization.getFontFamilyAsStyle(Localization.FontFamily.Regular)}>
 				<div className={Constants.Ids.footerButtonsContainer}>
 					<div className="footerButtonsLeft">
-						<a id={Constants.Ids.feedbackButton} role="button" {...this.enableInvoke({callback: this.handleFeedbackButton, tabIndex: 80})}>
-							<img id={Constants.Ids.feedbackImage} src={ExtensionUtils.getImageResourceUrl("feedback_smiley.png")} aria-hidden="true"/>
-							<span id={Constants.Ids.feedbackLabel} class="buttonTextInHighContrast">{Localization.getLocalizedString("WebClipper.Action.Feedback") }</span>
-						</a>
+						{!isMsaUser
+							? (<a id={Constants.Ids.feedbackButton} role="button" {...this.enableInvoke({callback: this.handleFeedbackButton, tabIndex: 80})}>
+									<img id={Constants.Ids.feedbackImage} src={ExtensionUtils.getImageResourceUrl("feedback_smiley.svg")} aria-hidden="true"/>
+									<span id={Constants.Ids.feedbackLabel} class="buttonTextInHighContrast">{Localization.getLocalizedString("WebClipper.Action.Feedback") }</span>
+							</a>)
+							: undefined
+						}
 					</div>
 					{showUserInfo
 						? (<div className="footerButtonsRight">
@@ -95,7 +99,7 @@ class FooterClass extends ComponentBase<FooterState, FooterProps> {
 										: ""
 									}
 								</div>
-								<img aria-hidden="true" id={Constants.Ids.userDropdownArrow} src={ExtensionUtils.getImageResourceUrl("dropdown_arrow.png")} />
+								<img aria-hidden="true" id={Constants.Ids.userDropdownArrow} src={ExtensionUtils.getImageResourceUrl("dropdown_arrow.svg")} />
 							</a>
 							</div>)
 						: undefined

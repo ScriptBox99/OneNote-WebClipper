@@ -31,11 +31,11 @@ $ npm run build -- --<arg>
 
 ### 4. Running in edge
 [Microsoft instructions](https://docs.microsoft.com/en-us/microsoft-edge/extensions/guides/adding-and-removing-extensions)
-1. In edge, go to about://flags
-2. Enable developer mode
+1. In edge, go to edge://extensions
+2. Enable developer mode (bottom left toggle)
 3. Restart edge
 4. Click on top right "...", then Extensions
-5. Click on load extension and select the target\edge\OneNoteWebClipper\edgeextension\manifest\extension
+5. Click on "Load unpacked" and select the target\edge\OneNoteWebClipper\edgeextension\manifest\extension
 6. On subsequent builds, you need to go through steps (4) and (5) again
 
 ### 5. Looking at console output

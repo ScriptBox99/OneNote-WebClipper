@@ -48,9 +48,8 @@ class ModeButtonSelectorClass extends ComponentBase<{}, ClipperStateProp> {
 		let augmentationLabel: string = Localization.getLocalizedString("WebClipper.ClipType." + augmentationType + ".Button");
 		let augmentationTooltip = Localization.getLocalizedString("WebClipper.ClipType.Button.Tooltip").replace("{0}", augmentationLabel);
 		let buttonSelected: boolean = currentMode === ClipMode.Augmentation;
-
 		return {
-			imgSrc: ExtensionUtils.getImageResourceUrl(augmentationType + ".png"),
+			imgSrc: (augmentationType === "Article") ? ExtensionUtils.getImageResourceUrl("article.svg") : ExtensionUtils.getImageResourceUrl(augmentationType + ".png"),
 			label: augmentationLabel,
 			myMode: ClipMode.Augmentation,
 			selected: buttonSelected,
@@ -65,7 +64,7 @@ class ModeButtonSelectorClass extends ComponentBase<{}, ClipperStateProp> {
 		}
 
 		return {
-			imgSrc: ExtensionUtils.getImageResourceUrl("fullpage.png"),
+			imgSrc: ExtensionUtils.getImageResourceUrl("fullpage.svg"),
 			label: Localization.getLocalizedString("WebClipper.ClipType.ScreenShot.Button"),
 			myMode: ClipMode.FullPage,
 			selected: currentMode === ClipMode.FullPage,
@@ -83,7 +82,7 @@ class ModeButtonSelectorClass extends ComponentBase<{}, ClipperStateProp> {
 		}
 
 		return {
-			imgSrc: ExtensionUtils.getImageResourceUrl("region.png"),
+			imgSrc: ExtensionUtils.getImageResourceUrl("region.svg"),
 			label: Localization.getLocalizedString(this.getRegionButtonLabel()),
 			myMode: ClipMode.Region,
 			selected: currentMode === ClipMode.Region,
@@ -117,7 +116,7 @@ class ModeButtonSelectorClass extends ComponentBase<{}, ClipperStateProp> {
 		}
 
 		return {
-			imgSrc: ExtensionUtils.getImageResourceUrl("bookmark.png"),
+			imgSrc: ExtensionUtils.getImageResourceUrl("bookmark.svg"),
 			label: Localization.getLocalizedString("WebClipper.ClipType.Bookmark.Button"),
 			myMode: ClipMode.Bookmark,
 			selected: currentMode === ClipMode.Bookmark,

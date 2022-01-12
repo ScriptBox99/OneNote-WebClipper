@@ -334,7 +334,7 @@ export class ModeButtonSelectorTests extends TestModule {
 			let icon = augmentationButton.getElementsByClassName(TestConstants.Classes.icon)[0] as HTMLImageElement;
 
 			// endsWith is polyfilled
-			ok((icon.src.toLowerCase() as any).endsWith("article.png"));
+			ok((icon.src.toLowerCase() as any).endsWith("article.svg"));
 		});
 
 		test("The augmentation button should have its image set according to the content model of the augmentation result", () => {
